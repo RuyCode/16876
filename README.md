@@ -8,3 +8,5 @@ PyGame - install: 'pip install pygame', also install wheel (before PyGame): 'pip
 PortScan can work not correctly, if many ports.
 
 Run program: run main.py
+
+TEST
