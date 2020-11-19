@@ -3,8 +3,8 @@ Mini  School project
 
 Need to use:
 Python 3.9 - install from python.org
-PyGame - install: 'pip install pygame', also install wheel (before PyGame): 'pip install wheel'
+PIL - to install use 'pip install pillow'
 
-PortScan can work not correctly, if many ports.
+PortScan can work not correctly, if many ports. If it hovered - wait, it is scanning!
 
 Run program: run main.py
