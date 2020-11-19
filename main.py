@@ -2,7 +2,7 @@
 import tkinter
 from tkinter import PhotoImage
 from PIL import Image
-from Modules.PortScan import Window
+from Modules.PortScan.PortScan import Window
 
 #init window
 mainwin = tkinter.Tk()
