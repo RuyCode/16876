@@ -1,5 +1,4 @@
 #import libraries
-import pygame
 import tkinter
 from tkinter import PhotoImage
 from PIL import Image
