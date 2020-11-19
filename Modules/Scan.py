@@ -21,4 +21,5 @@ def Scan(path_, port_start, port_end, host, window):
             open_ports.write(('Port -- ' + str(i) + ' -- [OPEN]\n'))
         except socket.error:
             continue
+    print('end')
     open_ports.close()

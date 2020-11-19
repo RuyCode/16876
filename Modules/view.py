@@ -1,17 +1,7 @@
-#import libraryies
-import pygame
+from tkinter import PhotoImage
 
-#sprites
-quit = pygame.image.load('Sprites/system/quit.png')
-info = pygame.image.load('Sprites/system/info.png')
-infotxt = pygame.image.load('Sprites/system/infotxt.png')
-portscan = pygame.image.load('Sprites/programs/portscan.png')
-sprites = [quit, info, portscan]
-
-#position of sprites
-positions = {
-    quit : (352, 0),
-    info : (0, 0),
-    infotxt : (0, 32),
-    portscan : (64, 64),
-}
+quit_s = PhotoImage(file="Sprites/System/quit.png")
+info_s = PhotoImage(file="Sprites/System/info.png")
+ports_s = PhotoImage(file="Sprites/programs/portscan.png")
+infotxt_s = PhotoImage(file="Sprites/System/infotxt.png")
+sprites = [quit_s, info_s, ports_s, infotxt_s]

@@ -10,6 +10,7 @@ class Window():
         self.path_ = 'Logs\log.txt'
         self.window.configure(background='#232328', width = 512, height = 768)
         self.window.resizable(width = False, height = False)
+        self.window.title('PortChecker v0.1')
         self.host_label = tkinter.Label(self.window, text = 'Host:', bg='#232328', fg='#ffffff', font = 16).pack()
         self.host_entry = tkinter.Entry(self.window, fg='white', bg='#494949', width=30)
         self.host_entry.pack()
