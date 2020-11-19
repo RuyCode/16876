@@ -1,47 +1,26 @@
 #import libraries
 import pygame
-import Modules.view as view
+import tkinter
+from tkinter import PhotoImage
+from PIL import Image
 from Modules.PortScan import Window
 
-#screen
-WIDTH = 384
-HEIGHT = 256
-FPS = 25
-THEME = (35, 35, 40)
+mainwin = tkinter.Tk()
+mainwin.title("MiniFramework v1.0")
+mainwin.configure(background='#232328')
 
-#init
-pygame.init()
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption('MiniFramework')
-clock = pygame.time.Clock()
-all_sprites = pygame.sprite.Group()
-draw = screen.blit
+quit_s = PhotoImage(file="Sprites/System/quit.png")
+info_s = PhotoImage(file="Sprites/System/info.png")
+ports_s = PhotoImage(file="Sprites/programs/portscan.png")
+infotxt_s = PhotoImage(file="Sprites/System/infotxt.png")
 
-#start
-running = True
-while running:
+def infotext():
+    inftxt = tkinter.Label(mainwin, image=infotxt_s, highlightthickness=0, bd = 0).grid(row=1, column=0, columnspan = 2, rowspan = 2, sticky = tkinter.NW)
 
-    #draw
-    all_sprites.update()
-    screen.fill(THEME)
-    for sprite_i in view.sprites:
-        draw(sprite_i, view.positions[sprite_i])
-    pygame.display.flip()
+mainwin.geometry('384x256')
+mainwin.resizable(width = False, height = False)
+quitb = tkinter.Button(mainwin, image=quit_s, command = quit, bd=0, relief=tkinter.FLAT, highlightthickness=0, overrelief=tkinter.FLAT).grid(row=0, column=2, padx = 96)
+infob = tkinter.Button(mainwin, image=info_s, command = infotext, bd=0, relief=tkinter.FLAT, highlightthickness=0, overrelief=tkinter.FLAT).grid(row=0, column=0)
+portsb = tkinter.Button(mainwin, image=ports_s, command = Window, bd=0, relief=tkinter.FLAT, highlightthickness=0, overrelief=tkinter.FLAT).grid(row=1, column=1, padx = 32, pady = 32)
 
-    #get and analyze event
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            exit()
-        elif event.type == pygame.MOUSEBUTTONDOWN:
-            (pos_x, pos_y) = pygame.mouse.get_pos()
-            if 352 <= pos_x <= 384 and 32 >= pos_y >= 0:
-                exit()
-            elif 0 <= pos_x <= 32 and 32 >= pos_y >= 0:
-                if view.infotxt in view.sprites:
-                    view.sprites.remove(view.infotxt)
-                else:
-                    view.sprites.append(view.infotxt)
-            elif 64 < pos_x < 224 and 64 < pos_y < 91:
-                win = Window()
-
-    clock.tick(FPS)
+mainwin.mainloop()
