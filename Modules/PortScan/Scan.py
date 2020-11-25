@@ -3,10 +3,11 @@ import socket
 
 def Scan(path_, port_start, port_end, host, window):
 
+    #close window
     window.destroy()
-    port = []
-
+    
     #port_start
+    port = []
     if os.path.exists(path_) == False:
         open_ports = open(path_, 'w+')
     else:

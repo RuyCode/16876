@@ -2,20 +2,22 @@
 import tkinter
 from tkinter import PhotoImage
 from PIL import Image
-from Modules.PortScan.PortScan import Window
+from Modules.PortScan.PortScan import Window as Window_ps
+from Modules.DoS.Dos import Window as Window_dos
 
 #init window
 mainwin = tkinter.Tk()
-mainwin.title("MiniFramework v1.0")
+mainwin.title('MiniFramework v1.0')
 mainwin.configure(background='#232328')
 mainwin.geometry('384x256')
 mainwin.resizable(width = False, height = False)
 
 #load sprites
-quit_s = PhotoImage(file="Sprites/System/quit.png")
-info_s = PhotoImage(file="Sprites/System/info.png")
-ports_s = PhotoImage(file="Sprites/programs/portscan.png")
-infotxt_s = PhotoImage(file="Sprites/System/infotxt.png")
+quit_s = PhotoImage(file='Sprites/System/quit.png')
+info_s = PhotoImage(file='Sprites/System/info.png')
+ports_s = PhotoImage(file='Sprites/programs/portscan.png')
+dos_s = PhotoImage(file='Sprites/programs/dos.png')
+infotxt_s = PhotoImage(file='Sprites/System/infotxt.png')
 
 #info txt works with it :3
 info_open = False
@@ -35,7 +37,8 @@ def infotext():
 #create buttons
 quitb = tkinter.Button(mainwin, image=quit_s, command = quit, bd=0, relief=tkinter.FLAT, highlightthickness=0, overrelief=tkinter.FLAT).grid(row=0, column=2, padx = 96)
 infob = tkinter.Button(mainwin, image=info_s, command = infotext, bd=0, relief=tkinter.FLAT, highlightthickness=0, overrelief=tkinter.FLAT).grid(row=0, column=0)
-portsb = tkinter.Button(mainwin, image=ports_s, command = Window, bd=0, relief=tkinter.FLAT, highlightthickness=0, overrelief=tkinter.FLAT).grid(row=1, column=1, padx = 32, pady = 32)
+portsb = tkinter.Button(mainwin, image=ports_s, command = Window_ps, bd=0, relief=tkinter.FLAT, highlightthickness=0, overrelief=tkinter.FLAT).grid(row=1, column=1, padx = 32, pady = 32)
+ddos = tkinter.Button(mainwin, image=dos_s, command = Window_dos, bd=0, relief=tkinter.FLAT, highlightthickness=0, overrelief=tkinter.FLAT).grid(row=2, column=1, padx = 0, pady = 0)
 
 #start window
 mainwin.mainloop()
