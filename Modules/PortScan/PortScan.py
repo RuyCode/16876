@@ -1,14 +1,14 @@
 import os
 import socket
 
-def Scan(path_, port_start, port_end, host, window):
 
-    #close window
+def Scan(path_, port_start, port_end, host, window):
+    # close window
     window.destroy()
-    
-    #port_start
+
+    # port_start
     port = []
-    if os.path.exists(path_) == False:
+    if not os.path.exists(path_):
         open_ports = open(path_, 'w+')
     else:
         open_ports = open(path_, 'w')
